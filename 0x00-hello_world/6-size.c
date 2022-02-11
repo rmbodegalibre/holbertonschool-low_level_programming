@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- *  * Print 5 lines winth different values
- *   * Return: 0
- *    */
+ * main - Print 5 lines winth different values
+ * Return: 0
+ */
 int main(void)
 {
 		printf("Size of a char: %i byte(s)\n", sizeof(char));
