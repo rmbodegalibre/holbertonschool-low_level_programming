@@ -1,4 +1,2 @@
-# holbertonschool-low_level_programming
-# holbertonschool-low_level_programming
-# holbertonschool-low_level_programming
-# holbertonschool-low_level_programming
+0x00. C - Hello, World
+My first steps in C
