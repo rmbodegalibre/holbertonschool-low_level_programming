@@ -1,7 +1,7 @@
-#include "holberton.h"
+#include "_putchar.h"
 /**
- * main - Print "Holberton" followed by a new line.
- * Description: You are not allowed to include standard libraries.
+ * main - Program to print "_putchar" followed by a new line.
+ * Description: Don't include standard libraries.
  * Return: 0
  */
 int main(void)
