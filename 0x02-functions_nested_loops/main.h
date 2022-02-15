@@ -36,9 +36,15 @@ int _isalpha(int c);
  */
 int print_sign(int n);
 /**
- * print_sign - computes the absolute value of an integer.
+ * _abs - computes the absolute value of an integer.
  * @int: Input integer value
  * Return: Value after calculate
  */
 int _abs(int);
+/**
+ * print_last_digit - prints the last digit of a number
+ * @int: Input integer value
+ * Return: Value after calculate
+ */
+int print_last_digit(int);
 #endif
