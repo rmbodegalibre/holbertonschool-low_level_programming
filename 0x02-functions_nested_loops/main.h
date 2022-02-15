@@ -17,4 +17,8 @@ void print_alphabet(void);
  * print_alphabet_x10 - Print alphabet ten times followed by new line
  */
 void print_alphabet_x10(void);
+/**
+ * _islower - checks for lowercase character.
+ */
+int _islower(int c);
 #endif
