@@ -29,4 +29,10 @@ int _islower(int c);
  * Return: 1 if character is alphabetic else 0
  */
 int _isalpha(int c);
+/**
+ * print_sign - prints the sign of a number.
+ * @n: The character to print
+ * Return: 1 and + if n>0, 0 and 0 if n=0, -1 and - if n<0
+ */
+int print_sign(int n);
 #endif
