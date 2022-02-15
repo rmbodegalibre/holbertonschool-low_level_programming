@@ -1,15 +1,4 @@
 #include "main.h"
-void print_alphabet_x10(void);
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	print_alphabet_x10();
-	return (0);
-}
 /**
  * print_alphabet_x10 - prt alphabet 10 times, lowercase, followed by new line
  * Only use _putchar
