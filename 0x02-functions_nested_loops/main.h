@@ -12,7 +12,7 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 /**
- * print_alphabet - print alphabet, lowercase, followed by a new line.
+ * print_alphabet - print alphabet,lowercase,followed by new line.
  * Only use _putchar
  * Return: 0
  */
