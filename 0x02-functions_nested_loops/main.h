@@ -47,4 +47,9 @@ int _abs(int);
  * Return: Value after calculate
  */
 int print_last_digit(int);
+/**
+ * jack_bauer - prints every minute of the day of Jack Bauer
+ * Return: Value after calculate
+ */
+void jack_bauer(void);
 #endif
