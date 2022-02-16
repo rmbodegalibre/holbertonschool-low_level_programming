@@ -69,4 +69,10 @@ int add(int, int);
  * Return: Value after calculate
  */
 void print_to_98(int n);
+/**
+ * print_times_table - prints the n times table, starting with 0
+ * @n: The character to print
+ * Return: Value after calculate
+ */
+void print_times_table(int n);
 #endif
