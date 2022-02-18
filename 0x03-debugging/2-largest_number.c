@@ -20,13 +20,9 @@ int largest_number(int a, int b, int c)
 	{
 		largest = b;
 	}
-	else if (c > a && c > b)
-	{
-		largest = c;
-	}
 	else
 	{
-		printf("At least two numbers are the same");
+		largest = c;
 	}
 
 	return (largest);
