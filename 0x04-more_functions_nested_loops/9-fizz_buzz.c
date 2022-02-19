@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - Print numbers 1-100 
- * Description: Multiples of 3, print Fizz. Multiples of 5, print Buzz.
- * Multiples of three and five should print FizzBuzz.
+ * main - Print numbers 1 - 100
+ * Description: Multiples of 3, print Fizz. Multiples of 5, print Buzz
+ * Multiples of three and five should print FizzBuzz
  * Return: 0
  */
 int main(void)
