@@ -2,7 +2,7 @@
 
 /**
  * leet - encodes a string into 1337
- * @c: string to encode
+ * @e: string to encode
  * Description: replace a,e,o,t with 4,3,0,7,1
  * Return: string e
  **/
