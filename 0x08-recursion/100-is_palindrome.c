@@ -27,7 +27,7 @@ int _strlen(char *s)
  * check_pal - Checks a palindrome
  * @s: The string
  * @len: The length of s.
- * @index: The index
+ * @idx: The index
  *
  * Return: If the string is palindrome - 1
  *         If the string is not palindrome - 0
