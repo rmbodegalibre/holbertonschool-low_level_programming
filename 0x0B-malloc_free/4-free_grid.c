@@ -3,7 +3,7 @@
 
 /**
  * free_grid - Frees a 2-dimensional grid previously created
- * 		By your function
+ * By your function
  * @grid: 2-dimensional array
  * @height: Height of grid
  */

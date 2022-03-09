@@ -3,12 +3,12 @@
 
 /**
  * argstostr - Concatenates all arguments of the program
- * 	   Each argument should be followed by a \n in the new string
+ * Each argument should be followed by a \n in the new string
  * @ac: number of arguments
  * @av: array of pointers
  *
  * Return: NULL If ac == 0, av == NULL
- * 	   a pointer to a new string or NULL if it fails.
+ * a pointer to a new string or NULL if it fails.
  */
 char *argstostr(int ac, char **av)
 {

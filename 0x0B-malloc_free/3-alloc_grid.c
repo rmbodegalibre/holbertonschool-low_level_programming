@@ -29,7 +29,7 @@ int **alloc_grid(int width, int height)
 
 	if (d2[h_idx] == NULL)
 	{
-	
+
 	for (; h_idx >= 0; h_idx--)
 	free(d2[h_idx]);
 
