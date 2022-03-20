@@ -14,5 +14,5 @@ _start:
 
 section  .data
 
-msg  db  "Hello World!"
+msg  DB  "Hello, World"
 len  equ $ - msg
