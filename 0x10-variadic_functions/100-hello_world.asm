@@ -1,18 +1,18 @@
-section  .text
-global   _start
+section .text
 
-_start:
+	main:
+	mov rax, 4		; function 4
+	mov rbx, 1		; stdout
+	mov rcx, msg		; msg
+	mov rdx, msgSize	; size
+	int 0x80
+	mov rax, 1		; function 1
+	mov rbx, 0		; code
+	int 0x80
+	ret
 
-    mov  edx, len
-    mov  ecx, msg
-    mov  ebx, 1
-    mov  eax, 4
-    int  0x80
+section .data
+msg: DB 'Hello, World', 10
+msgSize EQU $ - msg
 
-    mov  eax, 1
-    int  0x80
-
-section  .data
-
-msg  DB  'Hello, World', 10
-len  equ $ - msg
+global main
