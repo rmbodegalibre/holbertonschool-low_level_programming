@@ -12,8 +12,8 @@ int sum_them_all(const unsigned int n, ...)
 {
 	va_list args;
 	unsigned int idx, suma = 0;
-	va_start(args, n);
 
+	va_start(args, n);
 	if (n != 0)
 	{
 	for (idx = 0; idx < n; idx++)
