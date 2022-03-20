@@ -14,9 +14,9 @@ void print_all(const char * const format, ...)
 	int idx;
 	char *ptstr;
 	char *ptspace;
-	va_list ap;
+	va_list args;
 
-	va_start(ap, format);
+	va_start(args, format);
 	idx = 0;
 	while (format && format[idx])
 	{
@@ -27,17 +27,18 @@ void print_all(const char * const format, ...)
 		{
 
 			case 'c':
-				printf("%c%s", va_arg(ap, int), ptspace);
+				printf("%c%s", va_arg(args, int), ptspace);
 				break;
-			case 'e':
+                        case 'i':
+				printf("%d%s", va_arg(args, int), ptspace);
 				break;
 
-			case 'i':
-				printf("%d%s", va_arg(ap, int), ptspace);
+			case 'f':
+				printf("%f%s", va_arg(args, double), ptspace);
 				break;
 
 			case 's':
-				ptstr = va_arg(ap, char *);
+				ptstr = va_arg(args, char *);
 				if (!ptstr || !*ptstr)
 					ptstr = "(nil)";
 				printf("%s%s", ptstr, ptspace);
