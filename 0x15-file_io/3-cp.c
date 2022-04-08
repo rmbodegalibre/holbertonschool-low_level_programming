@@ -6,40 +6,79 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+void cp_file(int fd1, int fd2, char *av1, char *av2);
+
+/**
+ * main - copies the content of a file to another file
+ * @ac:	Counter of arguments
+ * @av: List of arguments
+ * Return: 0
+ */
+
+int main(int ac, char **av)
+{
+	int fd1, fd2, c1, c2;
+
+	if (ac != 3)
+	{
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+	exit(97);
+	}
+	fd1 = open(av[1], O_RDONLY);
+	if (fd1 == -1)
+	{
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+	exit(98);
+	}
+	fd2 = open(av[2], O_WRONLY | O_TRUNC | O_CREAT,
+	S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	if (fd2 == -1)
+	{
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+	exit(99);
+	}
+	cp_file(fd1, fd2, av[1], av[2]);
+	c1 = close(fd1);
+	if (c1 == -1)
+	{
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
+	exit(100);
+	}
+	c2 = close(fd2);
+	if (c2 == -1)
+	{
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
+	exit(100);
+	}
+	return (0);
+}
+
 /**
  * cp_file - copies the content of a file to another file
- * @f_ori: name original of file
- * @f_des: name destiny of file
- * Return: Text content in file of destiny
- * permissions to write the file
+ * @fd1: descriptor 1
+ * @fd2: descriptor 2
+ * @av1: filename 1
+ * @av2: filename 2
  */
-int cp_file(char *f_ori,char *f_des); 
-int main()
-{
-	if(!cp_file("fichero1.txt","fichero2.txt"))
-	printf("El fichero no se pudo copiar\n");
-	else
-	printf("Fichero copiado exitosamente\n");
-	return 0;
-}	
 
-int cp_file(char *f_ori,char *f_des)
-{
-	FILE *fp_ori,*fp_des; 
-	char c;
+void cp_file(int fd1, int fd2, char *av1, char *av2)
 
-	if(! (fp_ori = fopen(f_ori,"rt")) || ! (fp_des = fopen(f_des,"wt")))
+{
+	int rl, rw;
+	char mybuff[1024];
+
+	while ((rl = read(fd1, mybuff, 1024)) > 0)
 	{
-		perror("Error de apertura de ficheros");
-		exit(EXIT_FAILURE);
+	rw = write(fd2, mybuff, rl);
+	if (rw == -1)
+	{
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av2);
+	exit(99);
 	}
- 
-	while((c = fgetc(fp_ori))!=EOF && !ferror(fp_ori) && !ferror(fp_des))
-		fputc(c,fp_des);
- 
-	if(ferror(fp_ori) || ferror(fp_ori))
-		return 1;
-	fclose(fp_ori);
-	fclose(fp_des);
-	return 0;
+	}
+	if (rl == -1)
+	{
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av1);
+	exit(98);
+}
 }
