@@ -4,7 +4,7 @@
  * key_index - Bring the index of the key
  * @key: This is the key of data
  * @size: This is the size of array where will store key and data
- * 
+ *
  * Return: Index of key into array
  */
 
